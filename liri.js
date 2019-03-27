@@ -1,8 +1,8 @@
 require("dotenv").config(); // grabbing the .env containing the keys
 var keys = require("./keys.js"); // link the keys.js
 var axios = require("axios"); // requiring axios for OMDB and bands APIs
-// var spotify = require("node-spotify-api");
-// var spotify = new Spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 var moment = require("moment");
 moment().format();
 var fs = require("fs");
@@ -26,7 +26,7 @@ function command(input, query) {
       doWhat(query);
       break;
     default:
-      console.log("enter something");
+      console.log("Have another go");
       break;
   }
 }
@@ -91,13 +91,39 @@ function concert() {
     });
 }
 
-// concert(userChoice)
-// have to use axios
-// use this url : "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
-// display name, location, date
+function song() {
+  if (!query) {
+    query = "the sign ace of base";
+  }
+  spotify.search(
+    {
+      type: "track",
+      query: query,
+      limit: 5
+    },
+    function(err, data) {
+      if (err) {
+        return console.log("Sorry: " + err);
+      }
 
-// cond(spotify-this-song)
-// create a function spotify()
+      for (var i = 0; i < data.tracks.items.length; i++) {
+        console.log("Your search for '" + query + "' returned the following:");
+        console.log(
+          "Artist: " +
+            data.tracks.items[i].album.artists[0].name +
+            "\nSong Name: " +
+            data.tracks.items[i].name +
+            "\nPreview link: " +
+            data.tracks.items[i].external_urls.spotify +
+            "\nFrom the Album: " +
+            data.tracks.items[i].album.name
+        );
+        console.log("------------------------");
+      }
+    }
+  );
+}
+
 // cond(do-what-it-says)
 // create a function dowhatitsays()
 
