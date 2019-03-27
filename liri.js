@@ -1,18 +1,11 @@
-// install all the packages - dotenv, axios, moment, spotify, fs
-
 require("dotenv").config();
 var keys = require("./keys.js");
-var axios = require("axios"); // * [Axios](https://www.npmjs.com/package/axios)
-//  use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+var axios = require("axios");
 // var spotify = require("node-spotify-api");
-// var spotify = new Spotify(keys.spotify); // * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
-var moment = require("moment"); // * [Moment](https://www.npmjs.com/package/moment)
+// var spotify = new Spotify(keys.spotify);
+var moment = require("moment");
 var fs = require("fs");
 
-// User command choice
-// process.argv or inquirer
-// userChoice for movie/song/concert
-// process.argv or inquirer
 var input = process.argv[2];
 var query = process.argv.slice(3).join(" ");
 
