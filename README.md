@@ -1,10 +1,10 @@
 # liri
 
-Description
+<h2>Description</h2>
 
 Liri is a command line node app that takes in parameters and gives back data. Liri can search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
-Functionality
+<h2>Functionality</h2>
 
 The below commands should be input along with a query/search:
 
