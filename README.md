@@ -6,14 +6,14 @@ Liri is a command line node app that takes in parameters and gives back data. Li
 
 <h2>Functionality</h2>
 
-[Demo](https://github.com/chrislewisjones/liri/blob/master/images/LiriDemo.gif)
-
 The following four commands should be input along with a search term:
 
 movie-this,
 concert-this,
 spotify-this-song,
 do-what-it-says
+
+![My image](https://github.com/chrislewisjones/liri/blob/master/images/LiriDemo.gif)
 
 movie-this: searches OMDB for info and ratings data based on the search term. If no search term is provided, it will default to Mr Nobody.
 
