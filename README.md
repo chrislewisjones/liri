@@ -6,6 +6,8 @@ Liri is a command line node app that takes in parameters and gives back data. Li
 
 <h2>Functionality</h2>
 
+[Demo](https://github.com/chrislewisjones/liri/blob/master/images/LiriDemo.gif)
+
 The following four commands should be input along with a search term:
 
 movie-this,
