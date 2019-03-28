@@ -11,6 +11,8 @@ do-what-it-says
 
 movie-this: searches OMDB for info and ratings data based on the search term. If no search term is provided, it will default to Mr Nobody.
 
+![My image](https://github.com/chrislewisjones/liri/blob/master/images/movie-this_Jaws.png)
+
 concert-this: searches Bands in Town for event info based on the search term. If no search term is provided, it will default to The Foo Fighters.
 
 spotify-this-song: searches Spotify for song info based on the search term. If no term is provided, it will default to Ace of Base's The Sign.
