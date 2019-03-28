@@ -80,7 +80,7 @@ function movie(query) {
 // function called with input 'concert-this'
 function concert(query) {
   if (!query) {
-    query = "foo fighters"; // if blank the query will default to the Foo Fighters
+    query = "black keys"; // if blank the query will default to the Foo Fighters
   }
   axios
     .get(

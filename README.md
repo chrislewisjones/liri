@@ -13,8 +13,14 @@ movie-this: searches OMDB for info and ratings data based on the search term. If
 
 ![My image](https://github.com/chrislewisjones/liri/blob/master/images/movie-this_Jaws.png)
 
-concert-this: searches Bands in Town for event info based on the search term. If no search term is provided, it will default to The Foo Fighters.
+concert-this: searches Bands in Town for event info based on the search term. If no search term is provided, it will default to The Black Keys.
+
+![My image](https://github.com/chrislewisjones/liri/blob/master/images/concert-this_FooFighters.png)
 
 spotify-this-song: searches Spotify for song info based on the search term. If no term is provided, it will default to Ace of Base's The Sign.
 
+![My image](https://github.com/chrislewisjones/liri/blob/master/images/spotify-this-song_EyeOfTheTiger.png)
+
 do-what-it-says: This command reads info from a txt file and uses the text to perform a search.
+
+![My image](https://github.com/chrislewisjones/liri/blob/master/images/do-what-it-says.png)
