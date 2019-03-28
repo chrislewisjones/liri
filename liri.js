@@ -1,4 +1,4 @@
-require("dotenv").config(); // grabbing the .env containing the keys
+require("dotenv").config(); // loads environment variables from .env into process.env
 var keys = require("./keys.js"); // link the keys.js
 var axios = require("axios"); // requiring axios for OMDB and bands APIs
 var Spotify = require("node-spotify-api"); // and spotify
