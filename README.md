@@ -6,12 +6,12 @@ Liri is a command line node app that takes in parameters and gives back data. Li
 
 <h2>Functionality</h2>
 
-The below commands should be input along with a query/search:
+The following four commands should be input along with a search term:
 
 movie-this,
 concert-this,
 spotify-this-song,
-do-what-it-says,
+do-what-it-says
 
 movie-this: searches OMDB for info and ratings data based on the search term. If no search term is provided, it will default to Mr Nobody.
 
