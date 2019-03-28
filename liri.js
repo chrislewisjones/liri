@@ -1,19 +1,20 @@
 require("dotenv").config(); // grabbing the .env containing the keys
 var keys = require("./keys.js"); // link the keys.js
 var axios = require("axios"); // requiring axios for OMDB and bands APIs
-var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify);
-var omdb = keys.omdb;
-var bandsit = keys.bandsit;
-var moment = require("moment");
-moment().format();
-var fs = require("fs");
-var figlet = require("figlet");
+var Spotify = require("node-spotify-api"); // and spotify
+var spotify = new Spotify(keys.spotify); // key
+var omdb = keys.omdb; // key
+var bandsit = keys.bandsit; // key
+var moment = require("moment"); // requiring moment
+moment().format(); // to format the date in concert
+var fs = require("fs"); // requiring file-system to read .txt
+var figlet = require("figlet"); // requiring figlet for the title
 
 // entry using process.argv
-var input = process.argv[2];
-var query = process.argv.slice(3).join(" ");
+var input = process.argv[2]; // input is the switch case value
+var query = process.argv.slice(3).join(" "); // query added as a string
 
+// function to deal with the commands using a switch statement to call each function
 function command(input, query) {
   switch (input) {
     case "movie-this":
@@ -33,11 +34,12 @@ function command(input, query) {
       break;
   }
 }
-command(input, query);
+command(input, query); // call the command function
 
+// function called with input 'movie-this'
 function movie(query) {
   if (!query) {
-    query = "mr nobody";
+    query = "mr nobody"; // if blank the query will default to mr nobody
   }
   axios
     .get(
@@ -45,8 +47,9 @@ function movie(query) {
     )
     .then(function(response) {
       figlet(response.data.Title, function(err, data) {
+        // using figlet to play with the text
         if (err) {
-          console.log("Something went wrong...");
+          console.log("Something went wrong, try again");
           console.dir(err);
           return;
         }
@@ -74,7 +77,11 @@ function movie(query) {
     });
 }
 
+// function called with input 'concert-this'
 function concert(query) {
+  if (!query) {
+    query = "foo fighters"; // if blank the query will default to the Foo Fighters
+  }
   axios
     .get(
       "https://rest.bandsintown.com/artists/" +
@@ -104,6 +111,7 @@ function concert(query) {
     });
 }
 
+// function called with 'spotify-this-song'
 function song(query) {
   if (!query) {
     query = "the sign ace of base";
@@ -137,13 +145,15 @@ function song(query) {
   );
 }
 
+// function called with 'do-what-it-says'
 function doWhat() {
   fs.readFile("random.txt", "utf8", function(err, data) {
+    //reads the random.txt file
     if (err) {
       console.log("Something went wrong");
     }
-    var query = data.split(", ")[1];
-    var input = data.split(", ")[0];
-    command(input, query);
+    var query = data.split(", ")[1]; // splits the 2nd half of the text into query
+    var input = data.split(", ")[0]; // splits the 1st half into input
+    command(input, query); // uses these through the command function
   });
 }
